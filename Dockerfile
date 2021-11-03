@@ -20,8 +20,8 @@ RUN rm -f /var/spool/cron/crontabs/root && \
     chmod +x /opt/entrypoint.sh && \
     chmod +x /opt/backup.sh && \
     mkdir /var/log/cron/ && \
-    mkdir /home/backup/ && \
-    chown -R backup /home/backup && \
+    mkdir -p /home/backup/backups && \
+    chown -R backup:backup /home/backup && \
     chown -R backup:backup /var/log/cron/ && \
     touch /var/spool/cron/crontabs/backup && \
     chgrp backup /var/spool/cron/crontabs/backup && \
@@ -29,7 +29,7 @@ RUN rm -f /var/spool/cron/crontabs/root && \
 
 USER backup
 
-VOLUME /opt/backups
+VOLUME /home/backup/backups
 
 ENTRYPOINT ["/opt/entrypoint.sh"]
 
