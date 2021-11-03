@@ -1,5 +1,8 @@
 # Mysql/MariaDB scheduled backups
 
+[![GitHub CI Action Status](https://img.shields.io/github/workflow/status/oneofftech/database-backup-cron/ci?label=shellcheck)](https://github.com/oneofftech/database-backup-cron/actions?query=workflow%3Aci+branch%3Amain)
+[![GitHub Docker build Action Status](https://img.shields.io/github/workflow/status/oneofftech/database-backup-cron/docker?label=code%20style)](https://github.com/oneofftech/database-backup-cron/actions?query=workflow%3Adocker+branch%3Amain)
+
 The _database backup cron_ helps creating database dumps (or backups) at regular interval.
 Behind the scenes uses `cron` to schedule the execution of `mysqldump`.
 
@@ -12,7 +15,7 @@ The best way run it is with Docker Compose:
 
 ```yaml
   backup:
-    image: oneofftech/database-backup-cron:main
+    image: oneofftech/database-backup-cron:latest
     environment:
       DB_HOST: "### Replace With Database Host ###"
       DB_DATABASE: "### Replace With Database Name ###"
@@ -25,6 +28,9 @@ The best way run it is with Docker Compose:
 > Don't forget to add the database as a dependant service and place it in the 
 same network of your MariaDB/MySQL container. An example 
 [docker-compose.yml](./docker-compose.yml) is available.
+
+> Using `latest` tag for Docker image, consider using the 
+[latest tagged release](https://github.com/OneOffTech/database-backup-cron/releases).
 
 As shown in the code block above is required to specify some configuration
 parameter before running the service, in particular how to connect to your 
