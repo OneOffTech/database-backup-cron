@@ -26,7 +26,6 @@ services:
       DB_DATABASE: test
       DB_USER: db
       DB_PASSWORD: "unsafe"
-      CRON_SCHEDULE: "* * * * *"
     depends_on:
       - database
     networks:
