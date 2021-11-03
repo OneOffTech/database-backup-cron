@@ -20,7 +20,7 @@ services:
       - internal
 
   backup:
-    image: '${DOCKER_IMAGE:-oneofftech/database-backup-cron:main}'
+    image: '${DOCKER_IMAGE:-oneofftech/database-backup-cron:latest}'
     environment:
       DB_HOST: database
       DB_DATABASE: test
