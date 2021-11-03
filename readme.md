@@ -1,7 +1,7 @@
 # Mysql/MariaDB scheduled backups
 
-[![GitHub CI Action Status](https://img.shields.io/github/workflow/status/oneofftech/database-backup-cron/ci?label=shellcheck)](https://github.com/oneofftech/database-backup-cron/actions?query=workflow%3Aci+branch%3Amain)
-[![GitHub Docker build Action Status](https://img.shields.io/github/workflow/status/oneofftech/database-backup-cron/docker?label=code%20style)](https://github.com/oneofftech/database-backup-cron/actions?query=workflow%3Adocker+branch%3Amain)
+[![CI](https://github.com/OneOffTech/database-backup-cron/actions/workflows/ci.yml/badge.svg)](https://github.com/OneOffTech/database-backup-cron/actions/workflows/ci.yml)
+[![Build Docker Image](https://github.com/OneOffTech/database-backup-cron/actions/workflows/docker.yml/badge.svg)](https://github.com/OneOffTech/database-backup-cron/actions/workflows/docker.yml)
 
 The _database backup cron_ helps creating database dumps (or backups) at regular interval.
 Behind the scenes uses `cron` to schedule the execution of `mysqldump`.
