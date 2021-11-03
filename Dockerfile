@@ -1,7 +1,7 @@
 FROM alpine:3.14.2
 
 ARG BUILD_DATE
-ARG VCS_REF
+ARG BUILD_COMMIT
 
 LABEL maintainer="OneOffTech <info@oneofftech.xyz>" \
   org.label-schema.name="oneofftech/database-backup-cron" \
@@ -34,4 +34,4 @@ VOLUME /opt/backups
 ENTRYPOINT ["/opt/entrypoint.sh"]
 
 LABEL org.label-schema.build-date=$BUILD_DATE \
-  org.label-schema.vcs-ref=$VCS_REF
+  org.label-schema.vcs-ref=$BUILD_COMMIT
