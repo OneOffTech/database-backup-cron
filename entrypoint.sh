@@ -12,4 +12,4 @@ fi
 
 chown -R backup /home/backup/backups/ && \
 echo "${CRON_SCHEDULE} /opt/backup.sh >> /dev/stdout 2>&1" > /var/spool/cron/crontabs/backup && \
-crond -f -l ${CRON_LOG_LEVEL} -L /dev/stdout
+crond -f -l "${CRON_LOG_LEVEL}" -L /dev/stdout
