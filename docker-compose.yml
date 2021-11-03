@@ -31,4 +31,4 @@ services:
     networks:
       - internal
     volumes: 
-      - "/home/backup/backups"
+      - "/home/backup"

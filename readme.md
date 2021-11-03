@@ -22,7 +22,7 @@ The best way run it is with Docker Compose:
       DB_USER: "### Replace With Database User ###"
       DB_PASSWORD: "### Replace With Database Password ###"
     volumes: 
-      - "/home/backup/backups"
+      - "/home/backup"
 ```
 
 > Don't forget to add the database as a dependant service and place it in the 
@@ -42,7 +42,7 @@ database:
 - `DB_PASSWORD`: The password to access the database
 
 The database dump will be created at 11.02pm each day 
-in the `/home/backup/backups/` folder. Filename will be `{DB_DATABASE}.sql`.
+in the `/home/backup/` folder. Filename will be `{DB_DATABASE}.sql`.
 
 > The backup schedule is [configurable](#backup-schedule), 11.02pm is just a default value.
 
