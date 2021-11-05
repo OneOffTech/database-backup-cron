@@ -1,5 +1,5 @@
 #!/usr/bin/env sh
-set -euxo
+set -euo
 
 DB_PORT=${DB_PORT:-3306}
 
