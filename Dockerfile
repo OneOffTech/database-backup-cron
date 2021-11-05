@@ -14,11 +14,12 @@ RUN addgroup -S backup && adduser -D -H -G backup backup
 RUN apk add --no-cache --update busybox-suid mysql-client libcap && \
     setcap cap_setgid=ep /bin/busybox
 
-COPY --chown=backup:backup *.sh /opt/
+COPY *.sh /opt/
 
 RUN rm -f /var/spool/cron/crontabs/root && \
     chmod +x /opt/entrypoint.sh && \
     chmod +x /opt/backup.sh && \
+    chown backup:backup /opt/backup.sh && \
     mkdir /var/log/cron/ && \
     mkdir -p /home/backup && \
     chown -R backup:backup /home/backup && \
@@ -31,7 +32,7 @@ RUN rm -f /var/spool/cron/crontabs/root && \
 
 VOLUME /opt/backup
 
-USER backup
+USER root
 
 ENTRYPOINT ["/opt/entrypoint.sh"]
 
